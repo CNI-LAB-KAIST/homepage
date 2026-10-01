@@ -1,0 +1,36 @@
+# 홈 히어로 네트워크에 들어가는 키워드 목록입니다. 랩원 의견 받아 이 파일만 고치면 됩니다.
+# word,size,scale   —  size: 글자 크기(px, 10~32 권장), scale: macro(뇌 네트워크) 또는 micro(세포 확대 원)
+word,size,scale
+disease,31,macro
+connectivity,29,macro
+cognitive,27,macro
+changes,26,macro
+network,24,macro
+imaging,23,macro
+networks,21,macro
+fMRI,20,macro
+MRI,18,macro
+DTI,18,macro
+BOLD,17,macro
+PET,17,macro
+patients,16,macro
+disorders,15,macro
+regions,14,macro
+stroke,14,macro
+vascular,14,macro
+default mode,13,macro
+state,13,macro
+pattern,12,macro
+EEG,12,macro
+clinical,12,macro
+research,12,macro
+symptoms,11,macro
+progressive,11,macro
+structure,11,macro
+modularity,10,macro
+efficiency,10,macro
+intrinsic,10,macro
+ROI,10,macro
+neural,15,micro
+circuits,13,micro
+signal,13,micro
