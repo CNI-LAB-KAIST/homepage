@@ -93,3 +93,20 @@
     });
   }
 })();
+
+/* lab life slideshow */
+document.querySelectorAll('[data-slideshow]').forEach(function(box){
+  var slides=[].slice.call(box.querySelectorAll('.slide')),
+      dots=[].slice.call(box.querySelectorAll('.sl-dots button')),i=0,timer=null;
+  if(slides.length<2) return;
+  function show(n){i=(n+slides.length)%slides.length;
+    slides.forEach(function(s,k){s.classList.toggle('is-on',k===i);});
+    dots.forEach(function(d,k){d.classList.toggle('is-on',k===i);});}
+  function play(){stop();timer=setInterval(function(){show(i+1);},5200);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  box.querySelector('.sl-next').addEventListener('click',function(){show(i+1);play();});
+  box.querySelector('.sl-prev').addEventListener('click',function(){show(i-1);play();});
+  dots.forEach(function(d,k){d.addEventListener('click',function(){show(k);play();});});
+  box.addEventListener('mouseenter',stop); box.addEventListener('mouseleave',play);
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) play();
+});
