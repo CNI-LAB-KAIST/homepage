@@ -583,3 +583,11 @@ h2.h-lg{font-weight:600}
 .pagehead .bedges circle.ring{stroke:#6FA8D8;stroke-width:1;fill:none;opacity:.30}
 .pagehead .bnodes circle.hubdot{fill:var(--sky);opacity:1}
 @media (max-width:700px){.pagehead p:not(.eyebrow){padding-left:14px;font-size:16.5px}}
+
+/* professor photo */
+.pi-photo--img{padding:0;overflow:hidden;background:#E6EEF7}
+.pi-photo--img img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+
+/* alumni link column */
+.al-row .link-arrow{font-size:14px}
+.al-row .link-arrow svg{width:11px;height:11px}
