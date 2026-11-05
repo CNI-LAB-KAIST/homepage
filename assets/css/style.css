@@ -591,3 +591,6 @@ h2.h-lg{font-weight:600}
 /* alumni link column */
 .al-row .link-arrow{font-size:14px}
 .al-row .link-arrow svg{width:11px;height:11px}
+
+/* 이미지 드래그 저장 방지 */
+img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;user-drag:none}

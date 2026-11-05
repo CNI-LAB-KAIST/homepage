@@ -110,3 +110,13 @@ document.querySelectorAll('[data-slideshow]').forEach(function(box){
   box.addEventListener('mouseenter',stop); box.addEventListener('mouseleave',play);
   if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) play();
 });
+
+/* 이미지 우클릭 저장 / 드래그 저장 막기 (로고 등 링크 안의 이미지는 제외) */
+document.addEventListener('contextmenu', function (e) {
+  var img = e.target && e.target.closest ? e.target.closest('img') : null;
+  if (img && !img.closest('a')) e.preventDefault();
+});
+document.addEventListener('dragstart', function (e) {
+  var img = e.target && e.target.closest ? e.target.closest('img') : null;
+  if (img) e.preventDefault();
+});
