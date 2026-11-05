@@ -76,7 +76,23 @@
     });
   }
 
-  // --- news: category filter --------------------------------------------
+  // --- news: build the year buttons from the cards -----------------------
+  var yearBox = document.querySelector('[data-year-filter]');
+  if (yearBox) {
+    var years = [];
+    Array.prototype.forEach.call(document.querySelectorAll('[data-news-year]'), function (card) {
+      var y = card.getAttribute('data-news-year');
+      if (y && years.indexOf(y) === -1) years.push(y);
+    });
+    years.sort(function (a, b) { return b - a; });
+    var html = '<button type="button" class="is-on" data-filter="all">All</button>';
+    years.forEach(function (y) {
+      html += '<button type="button" data-filter="' + y + '">' + y + '</button>';
+    });
+    yearBox.innerHTML = html;
+  }
+
+  // --- news: year filter --------------------------------------------
   var filterButtons = document.querySelectorAll('[data-filter]');
   if (filterButtons.length) {
     Array.prototype.forEach.call(filterButtons, function (btn) {
@@ -85,8 +101,8 @@
         Array.prototype.forEach.call(filterButtons, function (b) {
           b.classList.toggle('is-on', b === btn);
         });
-        Array.prototype.forEach.call(document.querySelectorAll('[data-news-cat]'), function (card) {
-          var show = f === 'all' || card.getAttribute('data-news-cat') === f;
+        Array.prototype.forEach.call(document.querySelectorAll('[data-news-year]'), function (card) {
+          var show = f === 'all' || card.getAttribute('data-news-year') === f;
           card.style.display = show ? '' : 'none';
         });
       });

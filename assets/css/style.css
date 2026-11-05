@@ -135,7 +135,7 @@ a.card:hover{border-color:var(--line-strong);box-shadow:0 14px 34px rgba(16,27,6
 
 /* news rows */
 .news-rows{display:flex;flex-direction:column;border-top:1px solid #D5DEEA}
-.news-row{display:grid;grid-template-columns:120px 132px minmax(0,1fr) 250px 20px;align-items:center;gap:22px;
+.news-row{display:grid;grid-template-columns:120px minmax(0,1fr) 250px 20px;align-items:center;gap:22px;
   padding:24px 0;border-bottom:1px solid #D5DEEA;color:var(--ink)}
 .news-row:hover{background:rgba(255,255,255,.6)}
 .news-row .date{font-family:var(--mono);font-size:14px;color:var(--muted)}
@@ -539,10 +539,8 @@ h2.h-lg{font-weight:600}
 .news-thumb.has-img{height:168px;overflow:hidden;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;
   grid-template-rows:100%;gap:3px;padding:10px;box-sizing:border-box}
 .news-thumb.has-img img{width:100%;height:100%;max-height:100%;object-fit:contain;display:block;min-width:0;min-height:0}
-.news-card[data-news-cat="Conference"] .news-thumb.has-img,
-.news-card[data-news-cat="Lab"] .news-thumb.has-img{padding:0;background:#E6EEF7}
-.news-card[data-news-cat="Conference"] .news-thumb.has-img img,
-.news-card[data-news-cat="Lab"] .news-thumb.has-img img{object-fit:cover}
+.news-thumb--photo.has-img{padding:0;background:#E6EEF7}
+.news-thumb--photo.has-img img{object-fit:contain}
 
 /* lab life slideshow */
 .lablife .section-head{margin-bottom:26px}
@@ -594,3 +592,20 @@ h2.h-lg{font-weight:600}
 
 /* 이미지 드래그 저장 방지 */
 img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;user-drag:none}
+
+.news-card .ev{font-size:13.5px;color:var(--muted);line-height:1.5;margin-top:-4px}
+.news-card .ev + .who{font-size:13.5px}
+
+/* news cards: borderless, square corners, transparent background */
+.news-grid{gap:40px 30px}
+.news-card{background:transparent;border:0;border-radius:0;overflow:visible}
+.news-thumb{height:auto;aspect-ratio:3/2;border-radius:0;background:transparent;
+  border:1px solid var(--line)}
+.news-thumb.has-img{height:auto;aspect-ratio:3/2;border-radius:0;padding:14px;
+  background:transparent;border:1px solid var(--line)}
+.news-thumb--award{background:transparent}
+.news-thumb--photo.has-img{padding:14px;background:transparent}
+.news-card .bd{padding:16px 0 0;gap:9px}
+.news-card h3{font-size:18.5px;line-height:1.38}
+.news-card .news-meta{margin-bottom:2px}
+@media (max-width:700px){.news-grid{gap:34px 22px}}
