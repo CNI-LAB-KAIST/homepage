@@ -609,3 +609,5 @@ img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;user-drag:n
 .news-card h3{font-size:18.5px;line-height:1.38}
 .news-card .news-meta{margin-bottom:2px}
 @media (max-width:700px){.news-grid{gap:34px 22px}}
+
+.al-row .dash{color:var(--ph);font-variant-numeric:tabular-nums}
